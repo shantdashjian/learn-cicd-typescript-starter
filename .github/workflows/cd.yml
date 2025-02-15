@@ -41,6 +41,17 @@ jobs:
       - name: Build and push the image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-451016/notely-ar-repo/notely:latest .
 
+      - name: Check migration files
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Src directory contents:"
+          ls -la src
+          echo "DB directory contents:"
+          ls -la src/db
+          
       - name: Migrate the database
         run: npm run db:migrate
         
