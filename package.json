@@ -6,8 +6,7 @@
   "scripts": {
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:push:cd": "npx --verbose drizzle-kit push --dialect=turso --schema ./src/db/schema.ts --url \"$DATABASE_URL\" ",
-    "db:push:test": "node ./src/scripts/migrate.js && npx drizzle-kit push --dialect=turso --schema ./src/db/schema.ts --url \"$DATABASE_URL\"",
+    "db:push": "npx drizzle-kit push --dialect=turso --schema ./src/db/schema.ts --url \"$DATABASE_URL\"",
     "db:studio": "drizzle-kit studio",
     "build": "npx tsc",
     "start": "node dist/main.js",
