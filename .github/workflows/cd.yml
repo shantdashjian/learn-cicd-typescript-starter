@@ -23,9 +23,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-      
-      - name: Install @libsql/client
-        run: npm install @libsql/client
 
       - name: Build the app
         run: npm run build
