@@ -1,10 +1,14 @@
-FROM --platform=linux/amd64 node:18-slim
+FROM --platform=linux/amd64 node:22.11.0-slim
 
 WORKDIR /usr/src/app
 
-ADD . .
+COPY package*.json ./
 
-RUN npm ci
+RUN npm install
+
+COPY . .
+
+RUN npm install @libsql/linux-x64-gnu
 
 RUN npm run build
 
