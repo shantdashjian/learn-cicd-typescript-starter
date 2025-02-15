@@ -6,7 +6,7 @@
   "scripts": {
     "db:generate": "drizzle-kit generate",
     "db:migrate": "echo 'Starting migration...' && npm list drizzle-kit && npm list @libsql/client && npx drizzle-kit migrate",
-    "db:migrate:cd": "drizzle-kit migrate:sqlite --url \"$DATABASE_URL\"",
+    "db:push:cd": "npx drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "build": "npx tsc",
     "start": "node dist/main.js",
