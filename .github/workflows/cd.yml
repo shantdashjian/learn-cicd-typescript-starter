@@ -43,6 +43,17 @@ jobs:
       - name: Build and push the image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-451016/notely-ar-repo/notely:latest .
 
+      - name: Verify environment
+        run: |
+          echo "Node version:"
+          node --version
+          echo "NPM version:"
+          npm --version
+          echo "Installed packages:"
+          npm list @libsql/client drizzle-kit
+          echo "DATABASE_URL is set:"
+          [ ! -z "$DATABASE_URL" ] && echo "Yes" || echo "No"
+          
       - name: Migrate the database
         run: npm run db:push:cd
         
