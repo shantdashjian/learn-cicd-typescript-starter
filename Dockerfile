@@ -1,10 +1,10 @@
-FROM --platform=linux/amd64 node:22-slim
+FROM --platform=linux/arm64 node:22-slim
 
 WORKDIR /usr/src/app
 
 ADD . .
 
-RUN npm ci
+RUN npm i
 
 RUN npm run build
 
